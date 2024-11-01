@@ -4,45 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Головна - Комп'ютерні аксесуари</title>
+    <style>
+        /* Загальні стилі для body */
+        body {
+            font-size: 22px;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Селектор ідентифікатора */
+        #main-page {
+            color: #0066cc;
+            text-align: center;
+        }
+
+        /* Селектори атрибутів */
+        a[href^="catalog"] {
+            color: #cc0000;
+        }
+
+        a[href$=".html"] {
+            text-decoration: underline;
+        }
+
+        /* Селектор нащадків (контекстний селектор) */
+        .container .content p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Селектор сусідів */
+        h3 + ul {
+            margin-top: 20px;
+            padding-left: 0;
+        }
+
+        /* Псевдоклас :first-child */
+        ul li:first-child {
+            font-weight: bold;
+        }
+
+        /* Псевдоелемент ::after */
+        h2::after {
+            content: ' 💻';
+        }
+
+        /* Стилі для зображень */
+        img {
+            display: block;
+            margin: 10px 0 10px 10px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            float: right; /* Додаємо float для зображень праворуч */
+        }
+
+        /* Границя елемента */
+        hr.divider {
+            border: 0;
+            border-top: 2px solid blue;
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        /* Селектори псевдокласів та псевдоелементів */
+        a:hover {
+            color: green;
+        }
+
+        a:focus {
+            outline: 2px solid orange;
+        }
+
+        /* Використання важливих стилів */
+        a {
+            text-decoration: none !important;
+            color: #ff6600 !important;
+        }
+
+        /* Позиціювання елементів */
+        .popular-products {
+            color: green;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Псевдокласи для керування формами (приклад на майбутнє) */
+        input:invalid {
+            border-color: red;
+        }
+
+        /* Стилі для списку продуктів */
+        ul.product-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul.product-list li {
+            padding: 10px;
+            margin: 5px;
+            background-color: #e6e6e6;
+            border: 1px solid #ddd;
+            overflow: hidden; /* Забезпечує правильне відображення тексту */
+        }
+    </style>
 </head>
-<style>
-    body{
-        font-size: 22px;
-    }
-</style>
 <body>
 
-    <h2 lang="uk" id="main-page" class="section-title">Вітаємо на сайті "Комп'ютерні аксесуари"</h2>
+    <div class="container">
+        <h2 id="main-page" class="section-title">Вітаємо на сайті "Комп'ютерні аксесуари"</h2>
 
-    <p align="justify">
-        Наш магазин пропонує широкий вибір комп'ютерних аксесуарів, таких як процесори, монітори, вінчестери та багато іншого.
-        Завітайте до нашого <a href="catalog.html" style="text-decoration: underline;">каталогу</a> або дізнайтесь більше <a href="about.html" style="text-decoration: underline;">про нас</a>.
-    </p>
+        <div class="content">
+            <p class="description" align="justify">
+                Наш магазин пропонує широкий вибір комп'ютерних аксесуарів, таких як процесори, монітори, вінчестери та багато іншого.
+                Завітайте до нашого <a href="catalog.html">каталогу</a> або дізнайтесь більше <a href="about.html">про нас</a>.
+            </p>
+        </div>
 
-    <hr size="2" align="center" color="blue">
+        <hr class="divider">
 
-    <h3 align="center" style="color: green;" title="Популярні аксесуари">Популярні товари</h3>
+        <h3 class="popular-products" align="center">Популярні товари</h3>
 
-    <ul>
-        <li>
-            Процесор Intel Core i7
-            <br>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Intel_Core_i7_2020_logo.svg" alt="Intel Core i7" width="200" height="200">
-        </li>
-        <li>
-            Монітор Samsung 144 Гц
-            <br>
-            <img src="https://content1.rozetka.com.ua/goods/images/big/54632094.jpg" alt="Монітор Samsung" width="200" height="200">
-        </li>
-        <li>
-            Kingston SSD 1 ТБ
-            <br>
-            <!-- Зображення під назвою SSD -->
-            <img src="https://img.telemart.ua/435464-579668-category_page/kingston-nv2-3d-nand-1tb-m2-2280-pci-e-nvme-x4-snv2s1000g.jpg" alt="Kingston SSD" width="200" height="200">
-        </li>
-    </ul>
+        <ul class="product-list">
+            <li>
+                Процесор Intel Core i7
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Intel_Core_i7_2020_logo.svg" alt="Intel Core i7" width="200" height="200">
+                Опис: Висока продуктивність для професійних завдань.
+            </li>
+            <li>
+                Монітор Samsung 144 Гц
+                <img src="https://content1.rozetka.com.ua/goods/images/big/54632094.jpg" alt="Монітор Samsung" width="200" height="200">
+                Опис: Чудова якість зображення для ігор та роботи.
+            </li>
+            <li>
+                Kingston SSD 1 ТБ
+                <img src="https://img.telemart.ua/435464-579668-category_page/kingston-nv2-3d-nand-1tb-m2-2280-pci-e-nvme-x4-snv2s1000g.jpg" alt="Kingston SSD" width="200" height="200">
+                Опис: Надійне сховище даних з високою швидкістю.
+            </li>
+        </ul>  
+    </div>
 
-    <br clear="both" style="margin-top: 20px;" title="Кінець сторінки">
-    
 </body>
 </html>
